@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    background: radial-gradient(circle at center bottom, #0a0a1f 40%, #010009);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    color: #fff8dc;
+  }
+  
+  canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  /* Content */
+  .container {
+    text-align: center;
+    z-index: 2;
+    animation: fadeIn 2s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .diya {
+    position: relative;
+    width: 160px;
+    height: 100px;
+    margin: auto;
+    background: linear-gradient(to top, #5a2d0c, #8b4513);
+    border-radius: 100px 100px 15px 15px;
+    box-shadow: inset 0 0 15px #3e180a;
+    transform: scale(0.8);
+    animation: growDiya 3s ease forwards;
+  }
+  
+  @keyframes growDiya {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(0.8); opacity: 1; }
+  }
+  
+  .flame {
+    position: absolute;
+    top: -85px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 35px;
+    height: 70px;
+    background: radial-gradient(ellipse at center, #ffcc33, #ff6600 70%);
+    border-radius: 50% 50% 40% 40%;
+    box-shadow: 0 0 25px 10px #ff8c00;
+    animation: riseFlame 3s ease-in-out 1.5s forwards, flicker 1s infinite alternate;
+    opacity: 0;
+  }
+  
+  @keyframes riseFlame {
+    to { opacity: 1; transform: translateX(-50%) scale(1); }
+  }
+  
+  @keyframes flicker {
+    0% { transform: translateX(-50%) scale(1); box-shadow: 0 0 20px 6px #ff8c00; }
+    100% { transform: translateX(-50%) scale(1.05); box-shadow: 0 0 25px 8px #ffd700; }
+  }
+  
+
+  .base {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background: #3e180a;
+    border-radius: 0 0 15px 15px;
+  }
+    .greet h1 {
+    font-size: 60px;
+    color: #ffd700;
+    text-shadow: 0 0 25px #ffbf00;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: growText 3s ease-in-out 1.2s forwards;
+  }
+  
+  @keyframes growText {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .greet p {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #ffeab9;
+    opacity: 0;
+    animation: fadeInText 3s ease-in-out 2.5s forwards;
+  }
+  
+  @keyframes fadeInText {
+    to { opacity: 1; }
+  }
+  
